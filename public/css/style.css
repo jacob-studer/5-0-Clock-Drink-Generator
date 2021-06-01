@@ -8,11 +8,15 @@
 } */
 
 
-/* Main */
 
-body {}
+/* Main*/
 
-div#all-pages {
+#mainpage {
+  width: 100vw;
+  height: 100vh;
+}
+
+.main {
   font-family: 'Abel', sans-serif;
   background-color: #f3cd05;
   animation: pulse 5s;
@@ -28,18 +32,31 @@ div#all-pages {
   }
 }
 
-header#DrinkAppHeader.display-flex.justify-space-between.align-center.p-2 {
+
+
+header#DrinkAppHeader.display-flex.align-center.p-2 {
   background-color: #f49f05;
 }
 
+
+
 h1#websiteheader a {
   color: #1b89bc;
+  font-size: 50px;
   font-family: 'Original Surfer', cursive;
-  text-shadow: 0 0 1px #FF0000, 0 0 2px #0000FF;
   text-decoration: none;
+  animation: glow 1s ease-in-out infinite alternate;
 }
 
-nav {}
+@-webkit-keyframes glow {
+  from {
+    text-shadow: 0 0 10px #fff, 0 0 20px #fff, 0 0 30px #e60073, 0 0 40px #e60073, 0 0 50px #e60073, 0 0 60px #e60073, 0 0 70px #e60073;
+  }
+
+  to {
+    text-shadow: 0 0 20px #fff, 0 0 30px #ff4da6, 0 0 40px #ff4da6, 0 0 50px #ff4da6, 0 0 60px #ff4da6, 0 0 70px #ff4da6, 0 0 80px #ff4da6;
+  }
+}
 
 #mainsitenav a {
   color: #000;
@@ -55,28 +72,52 @@ nav {}
   text-decoration: none;
 }
 
-/* #mainsitenav a::before {
-  content: '';
-  background-image: url('https://s3-us-west-2.amazonaws.com/s.cdpn.io/9632/chris.jpg');
-  background-position: 0 30%;
-  background-repeat: no-repeat;
-  background-size: 100%;
-  height: 100vh;
-  left: 0;
-  position: absolute;
-  bottom: 0vh;
-  width: 100vw;
-  transform: translateY(100%);
-  transition: transform .3s;
-}
+/* Footer */
 
-#mainsitenav a:hover::before {
-  transform: translateY(0px);
+/* footer#backtotop.hvr-icon-forward a {
+  color: aliceblue;
 } */
 
+/* Bottom Nav */
+nav.bottom-nav {
+  background-color: #065b83;
+  width: 100%;
+}
+
+ul.navbar {
+  list-style-type: none;
+  justify-content: flex-start;
+
+}
+
+li.nav-item a {
+  color: aliceblue;
+  text-decoration: none;
+}
+
+li.nav-item a:hover {
+  color: #f49f05;
+  text-decoration: none;
+}
+
+.no-button {
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  color: #1b89bc;
+  text-decoration: none;
+  font-size: 100%;
+}
+
+.no-button:hover {
+  color: #065b83;
+  text-decoration: underline;
+}
 
 
 /* Homepage */
+
 
 div.jumbotron {
   display: flex;
@@ -96,25 +137,6 @@ div#lets-grab-a-drink.container {
   margin: 3px;
 }
 
-
-
-button#logout.no-button {
-  background: none;
-  border: none;
-  padding: 0;
-  cursor: pointer;
-  color: #1b89bc;
-  text-decoration: none;
-  font-size: 100%;
-}
-
-.no-button:hover {
-  color: #065b83;
-  text-decoration: underline;
-  font-style: initial;
-}
-
-
 .display-4 {
   color: whitesmoke;
   text-shadow: 0 2px 3px #FF0000;
@@ -128,63 +150,38 @@ label:hover {
   color: whitesmoke;
 }
 
-/* Cocktail of the Day/Favorites Cards */
-div.row {
-  padding: 10px;
-}
 
-.drink-card {
+div.row {
+  padding: 18px;
   justify-content: center;
 }
 
-.drink-image-home {
-  max-height: 300px;
-  max-width: 300px;
-  border-radius: 15px;
-  padding: 5px;
+div#wildcardcocktailsection.col-lg-6 {
+  height: 100vh;
+  background: url("https://cdn.stocksnap.io/img-thumbs/960w/sparks-sparkler_L6BUD1V0U3.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 25px;
+  justify-content: space-around;
+  padding: 30px;
+  margin-right: 40px;
 }
 
-.drink-image-home-1 {
-  max-height: 300px;
-  max-width: 300px;
-  border-radius: 10px;
-  padding: 3px;
-}
-
-.drink-image-home-2 {
-  max-height: 300px;
-  max-width: 300px;
-  border-radius: 10px;
-  padding: 3px;
-}
-
-.drink-image-home-3 {
-  max-height: 300px;
-  max-width: 300px;
-  border-radius: 10px;
-  padding: 3px;
-}
-
-.drink-image-home-4 {
-  max-height: 300px;
-  max-width: 300px;
-  border-radius: 10px;
-  padding: 3px;
-}
-
-.drink-image {
-  max-height: 600px;
-  max-width: 600px;
-  border-radius: 10px;
-}
-
-h5.wildcard {
-  font-family: 'Fredericka the Great', cursive;
-  text-shadow: 0 0 3px #FF0000;
-  color: white;
-  font-size: 32px;
-  text-align: center;
-  padding: 2px;
+div#ourfavoritessection.col-lg-6 {
+  height: 100vh;
+  background: url("https://upload.wikimedia.org/wikipedia/commons/7/7f/Sea_blue_yellow_sun.jpg");
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  width: fit-content;
+  height: fit-content;
+  border-radius: 5px;
+  padding: 25px;
+  margin-left: 30px;
 }
 
 p.drink-name-home {
@@ -195,18 +192,70 @@ p.drink-name-home {
   padding: 2px;
 }
 
+h5.wildcard {
+  font-family: 'Fredericka the Great', cursive;
+  text-shadow: 0 0 3px #FF0000;
+  color: white;
+  font-size: 38px;
+  text-align: center;
+  padding: 2px;
+}
+
 h5.favorites {
   font-family: 'Limelight', cursive;
   text-shadow: 0 0 3px #FF0000;
   color: white;
-  font-size: 32px;
+  font-size: 38px;
   text-align: center;
   padding: 2px;
+}
+
+.drink-card {
+  text-align: center;
+}
+
+.drink-image-home {
+  height: 600px;
+  width: 425px;
+  border-radius: 10px;
+  padding: 40px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.drink-image-home-1 {
+  max-height: 300px;
+  max-width: 300px;
+  border-radius: 35px;
+}
+
+.drink-image-home-2 {
+  max-height: 300px;
+  max-width: 300px;
+  border-radius: 35px;
+}
+
+.drink-image-home-3 {
+  max-height: 300px;
+  max-width: 300px;
+  border-radius: 35px;
+}
+
+.drink-image-home-4 {
+  max-height: 300px;
+  max-width: 300px;
+  border-radius: 35px;
+}
+
+.drink-image {
+  max-height: 600px;
+  max-width: 600px;
+  border-radius: 10px;
 }
 
 p.drink-name-home-1 {
   font-size: 24px;
   padding: 6px;
+  color: #1b89bc;
 }
 
 p.drink-name-home-1:hover {
@@ -216,26 +265,82 @@ p.drink-name-home-1:hover {
 p.drink-name-home-2 {
   font-size: 24px;
   padding: 6px;
+  color: #1b89bc;
+}
+
+p.drink-name-home-2:hover {
+  color: #ca4242;
 }
 
 p.drink-name-home-3 {
   font-size: 24px;
   padding: 6px;
+  color: #1b89bc;
+}
+
+p.drink-name-home-3:hover {
+  color: #ca4242;
 }
 
 p.drink-name-home-4 {
   font-size: 24px;
   padding: 6px;
+  color: #1b89bc;
 }
 
-/* Profile Page */
-/* div#profile-page {
-  background-color: #f3cd05;
-} */
+p.drink-name-home-4:hover {
+  color: #ca4242;
+}
+
+
+/* Login page */
+
+#loginpage {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+/* Profile page */
+
+#profile {
+  width: 100vw;
+  height: 100vh;
+}
+
+
+
+/* Drink results page */
+
+#drinksearch {
+  width: 100vw;
+  height: 100vh;
+}
+
+.card-body {
+  width: fit-content;
+  height: fit-content;
+}
+
+div.drink-name li {
+  text-decoration: none;
+  list-style-type: decimal;
+}
+
+
+/* Drink individual page */
+
+#drinkindividualpage {
+  width: 100vw;
+  height: 100vh;
+}
 
 
 
 
+
+
+/* Media Styles */
 
 @media screen and (max-width: 768px) {
   img.drink-image {
